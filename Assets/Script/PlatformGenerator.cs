@@ -5,11 +5,10 @@ using UnityEngine;
 public class PlatformGenerator : MonoBehaviour
 {
     public GameObject thePlatform;
+    public GameObject theBackground; // เพิ่ม GameObject สำหรับพื้นหลังของเกม
     public Transform generationPoint;
     public float distanceBetween;
-
     private float platformWidth;
-
     public float distanceBetweenMin;
     public float distanceBetweenMax;
 
@@ -17,6 +16,9 @@ public class PlatformGenerator : MonoBehaviour
     void Start()
     {
         platformWidth = thePlatform.GetComponent<BoxCollider2D>().size.x;
+
+        // สร้าง GameObject สำหรับพื้นหลังของเกม
+        Instantiate(theBackground, new Vector3(0f, 0f, 0f), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -31,4 +33,5 @@ public class PlatformGenerator : MonoBehaviour
             Instantiate(thePlatform, transform.position, transform.rotation);
         }
     }
+
 }
