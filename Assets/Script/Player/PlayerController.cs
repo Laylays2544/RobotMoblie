@@ -30,7 +30,46 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         dashTime = 0f;
     }
+    public void Jump()
+    {
+        Debug.Log("Jumped");
+        if (grounded)
+        {
+            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+            canDoubleJump = true;
+        }
+        else if (canDoubleJump)
+        {
+            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+            canDoubleJump = false;
+            Debug.Log("Double Jumped");
+        }
+    }
 
+    public void Dash()
+    {
+        if (!isDashing && dashTime <= 0)
+        {
+            isDashing = true;
+            dashTime = dashDuration;
+            myRigidbody.velocity = new Vector2(dashSpeed * Mathf.Sign(myRigidbody.velocity.x), myRigidbody.velocity.y);
+            Debug.Log("Dashed");
+        }
+        if (isDashing)
+        {
+            dashTime -= Time.deltaTime;
+            if (dashTime <= 0)
+            {
+                isDashing = false;
+                Debug.Log("Dash Ended");
+            }
+        }
+
+        if (dashTime <= 0)
+        {
+            dashTime = 0;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -77,40 +116,44 @@ public class PlayerController : MonoBehaviour
         //    dashTime = 0;
         //}
     }
-    public void Jump()
-    {
-        if (grounded)
-        {
-            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
-            canDoubleJump = true;
-        }
-        else if (canDoubleJump)
-        {
-            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
-            canDoubleJump = false;
-        }
-    }
+    //public void Jump()
+    //{
+    //    Debug.Log("Jumped");
+    //    if (grounded)
+    //    {
+    //        myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+    //        canDoubleJump = true;
+    //    }
+    //    else if (canDoubleJump)
+    //    {
+    //        myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+    //        canDoubleJump = false;
+    //        Debug.Log("Double Jumped");
+    //    }
+    //}
 
-    public void Dash()
-    {
-        if (!isDashing && dashTime <= 0)
-        {
-            isDashing = true;
-            dashTime = dashDuration;
-            myRigidbody.velocity = new Vector2(dashSpeed * Mathf.Sign(myRigidbody.velocity.x), myRigidbody.velocity.y);
-        }
-        if (isDashing)
-        {
-            dashTime -= Time.deltaTime;
-            if (dashTime <= 0)
-            {
-                isDashing = false;
-            }
-        }
+    //public void Dash()
+    //{
+    //    if (!isDashing && dashTime <= 0)
+    //    {
+    //        isDashing = true;
+    //        dashTime = dashDuration;
+    //        myRigidbody.velocity = new Vector2(dashSpeed * Mathf.Sign(myRigidbody.velocity.x), myRigidbody.velocity.y);
+    //        Debug.Log("Dashed");
+    //    }
+    //    if (isDashing)
+    //    {
+    //        dashTime -= Time.deltaTime;
+    //        if (dashTime <= 0)
+    //        {
+    //            isDashing = false;
+    //            Debug.Log("Dash Ended");
+    //        }
+    //    }
 
-        if (dashTime <= 0)
-        {
-            dashTime = 0;
-        }
-    }
+    //    if (dashTime <= 0)
+    //    {
+    //        dashTime = 0;
+    //    }
+    //}
 }
