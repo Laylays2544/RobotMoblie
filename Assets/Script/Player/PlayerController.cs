@@ -5,10 +5,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    private float moveSpeedStore;
     public float speedMultiplier;
 
     public float speedIncreaseMilestone;
+    private float speedIncreaseMilestoneStore;
+
     private float speedMilestoneCount;
+    private float speedMilestoneCountStore;
 
     public float jumpForce;
 
@@ -31,13 +35,23 @@ public class PlayerController : MonoBehaviour
 
     private Collider2D myCollider;
 
+    public GameManager theGamemanager;
+
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
+
         myCollider = GetComponent<Collider2D>();
+
         jumpTimeCounter = jumpTime;
+
         speedMilestoneCount = speedIncreaseMilestone;
+
+        moveSpeedStore = moveSpeed;
+        speedMilestoneCountStore = speedMilestoneCount;
+        speedIncreaseMilestoneStore = speedIncreaseMilestone;
+
         //isDashing = false;
         //dashTime = 0f;
     }
@@ -120,5 +134,16 @@ public class PlayerController : MonoBehaviour
         //{
         //    dashTime = 0;
         //}
+    }
+
+    public void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "killbox")
+        {
+            theGamemanager.RestartGame();
+            moveSpeed = moveSpeedStore;
+            speedMilestoneCount = speedMilestoneCountStore;
+            speedIncreaseMilestone = speedIncreaseMilestoneStore;
+        }
     }
 }
