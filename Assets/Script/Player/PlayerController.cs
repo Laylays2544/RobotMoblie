@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     public float jumpTime;
     private float jumpTimeCounter;
 
+    private bool stoppedJumping;
+    private bool canDoubleJump;
+
     private Rigidbody2D myRigidbody;
 
     public bool grounded;
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
         speedMilestoneCountStore = speedMilestoneCount;
         speedIncreaseMilestoneStore = speedIncreaseMilestone;
 
+        stoppedJumping = true;
         //isDashing = false;
         //dashTime = 0f;
     }
@@ -95,19 +99,32 @@ public class PlayerController : MonoBehaviour
         if (grounded)
         {
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+            stoppedJumping = false;
         }
-
-        if (jumpTimeCounter > 0)
+        if (!grounded && canDoubleJump)
         {
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
-            jumpTimeCounter -= Time.deltaTime;
+            jumpTimeCounter = jumpTime;
+            stoppedJumping = false;
+            canDoubleJump = false;
         }
+        if(!stoppedJumping)
+        {
+            if (jumpTimeCounter > 0)
+            {
+                myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
+                jumpTimeCounter -= Time.deltaTime;
+            }
 
+        }
+        
         jumpTimeCounter = 0;
+        stoppedJumping = true;
 
         if (grounded)
         {
             jumpTimeCounter = jumpTime;
+            canDoubleJump = true;
         }
     }
 

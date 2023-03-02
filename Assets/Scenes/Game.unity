@@ -1351,7 +1351,7 @@ MonoBehaviour:
   - {fileID: 1240700374}
   - {fileID: 717352070}
   maxHeightPoint: {fileID: 1395585906}
-  maxHeightChange: 3
+  maxHeightChange: 10
 --- !u!4 &1089888509
 Transform:
   m_ObjectHideFlags: 0
