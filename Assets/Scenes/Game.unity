@@ -1945,15 +1945,15 @@ MonoBehaviour:
   generationPoint: {fileID: 1394809601}
   distanceBetween: 3
   distanceBetweenMin: 1
-  distanceBetweenMax: 10
+  distanceBetweenMax: 5
   theObjectPools:
   - {fileID: 824307244}
   - {fileID: 212322857}
   - {fileID: 1240700374}
   - {fileID: 717352070}
   maxHeightPoint: {fileID: 1395585906}
-  maxHeightChange: 10
-  randomLaserThreshold: 25
+  maxHeightChange: 5
+  randomLaserThreshold: 15
   laserPool: {fileID: 167978489}
 --- !u!4 &1089888509
 Transform:
@@ -2830,7 +2830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395585905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3405,7 +3405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1747275173
 Transform:
   m_ObjectHideFlags: 0
