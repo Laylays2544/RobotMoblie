@@ -16,13 +16,6 @@ public class PlayerController : MonoBehaviour
 
     public float jumpForce;
 
-    //public float dashSpeed;
-    //public float dashDuration;
-    //public float dashCooldown;
-
-    //private bool isDashing;
-    //private float dashTime;
-
     public float jumpTime;
     private float jumpTimeCounter;
 
@@ -30,11 +23,15 @@ public class PlayerController : MonoBehaviour
     private bool canDoubleJump;
 
     private Rigidbody2D myRigidbody;
-
+    
     public bool grounded;
     public LayerMask whatIsGround;
     public Transform groundCheck;
     public float groundCheckRadius;
+
+    public float dashTime; //Dash
+    public float dashSpeed; //Dash
+    private float dashTimeLeft; //Dash
 
     private Collider2D myCollider;
 
@@ -56,42 +53,6 @@ public class PlayerController : MonoBehaviour
         speedIncreaseMilestoneStore = speedIncreaseMilestone;
 
         stoppedJumping = true;
-        //isDashing = false;
-        //dashTime = 0f;
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-
-        grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
-
-        //grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-
-        if(transform.position.x > speedMilestoneCount)
-        {
-            speedMilestoneCount += speedIncreaseMilestone;
-
-            speedIncreaseMilestone = speedIncreaseMilestone * speedMultiplier;
-            moveSpeed = moveSpeed + speedMultiplier;
-        }
-
-        myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
-        
-
-        //if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-        //{
-        //    if (grounded)
-        //    {
-        //        myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
-        //        canDoubleJump = true;
-        //    }
-        //    else if (canDoubleJump)
-        //    {
-        //        myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
-        //        canDoubleJump = false;
-        //    }
-        //}
     }
 
     public void Jump()
@@ -108,7 +69,7 @@ public class PlayerController : MonoBehaviour
             stoppedJumping = false;
             canDoubleJump = false;
         }
-        if(!stoppedJumping)
+        if (!stoppedJumping)
         {
             if (jumpTimeCounter > 0)
             {
@@ -117,7 +78,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        
+
         jumpTimeCounter = 0;
         stoppedJumping = true;
 
@@ -128,39 +89,63 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Dash()
+    public void Dash() //Method Dash System
     {
-        //if (!isDashing && dashTime <= 0)
-        //{
-        //    isDashing = true;
-        //    dashTime = dashDuration;
-        //    myRigidbody.velocity = new Vector2(dashSpeed * Mathf.Sign(myRigidbody.velocity.x), myRigidbody.velocity.y);
-        //    Debug.Log("Dashed");
-        //}
-        //if (isDashing)
-        //{
-        //    dashTime -= Time.deltaTime;
-        //    if (dashTime <= 0)
-        //    {
-        //        isDashing = false;
-        //        Debug.Log("Dash Ended");
-        //    }
-        //}
+        if (dashTimeLeft <= 0)
+        {
+            dashTimeLeft = dashTime;
+        }
+    }
 
-        //if (dashTime <= 0)
-        //{
-        //    dashTime = 0;
-        //}
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) // Start Update Dash System
+        {
+            Dash();
+        }
+
+        if (dashTimeLeft > 0)
+        {
+            moveSpeed = dashSpeed;
+            dashTimeLeft -= Time.deltaTime;
+        }
+        else
+        {
+            moveSpeed = moveSpeedStore;
+        } // End Line Update Dash System
+
+        grounded = Physics2D.IsTouchingLayers(myCollider, whatIsGround);
+
+        //grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+
+        if(transform.position.x > speedMilestoneCount)
+        {
+            speedMilestoneCount += speedIncreaseMilestone;
+
+            speedIncreaseMilestone = speedIncreaseMilestone * speedMultiplier;
+            moveSpeed = moveSpeed + speedMultiplier;
+        }
+
+        myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
+        
     }
 
     public void OnCollisionEnter2D(Collision2D other)
     {
+        //RestartGame System
         if(other.gameObject.tag == "killbox")
         {
             theGamemanager.RestartGame();
             moveSpeed = moveSpeedStore;
             speedMilestoneCount = speedMilestoneCountStore;
             speedIncreaseMilestone = speedIncreaseMilestoneStore;
+        }
+
+        //Dash System
+        if (other.gameObject.CompareTag("DashPowerUp"))
+        {
+            Destroy(other.gameObject);
+            dashTimeLeft = dashTime;
         }
     }
 }

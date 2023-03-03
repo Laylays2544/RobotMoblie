@@ -3210,7 +3210,7 @@ GameObject:
   - component: {fileID: 1601138940}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: DashPowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3238,6 +3238,8 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 109292968}
   groundCheckRadius: -7
+  dashTime: 3
+  dashSpeed: 30
   theGamemanager: {fileID: 643794639}
 --- !u!50 &1601138941
 Rigidbody2D:
