@@ -25,6 +25,8 @@ public class PlatformGenerator : MonoBehaviour
     public float maxHeightChange;
     private float heightChange;
 
+    public float randomLaserThreshold;
+    public ObjectPooler laserPool;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +76,19 @@ public class PlatformGenerator : MonoBehaviour
             newPlatform.transform.position = transform.position;
             newPlatform.transform.rotation = transform.rotation;
             newPlatform.SetActive(true);
+
+            if(Random.Range(0f, 100f) < randomLaserThreshold)
+            {
+                GameObject newLaser = laserPool.GetPooledObject();
+
+                float laserXPosition = Random.Range(-platformWidths[platformSelector] / 2f + 1f, platformWidths[platformSelector] / 2f - 1f);
+
+                Vector3 laserPosition = new Vector3(laserXPosition, 1f, 0f);
+
+                newLaser.transform.position = transform.position + laserPosition;
+                newLaser.transform.rotation = transform.rotation;
+                newLaser.SetActive(true);
+            }
 
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
         }
