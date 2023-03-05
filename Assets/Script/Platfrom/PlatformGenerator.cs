@@ -81,9 +81,9 @@ public class PlatformGenerator : MonoBehaviour
             {
                 GameObject newLaser = laserPool.GetPooledObject();
 
-                float laserXPosition = Random.Range(-platformWidths[platformSelector] / 2f + 1f, platformWidths[platformSelector] / 2f - 1f);
+                float laserXPosition = Random.Range(-platformWidths[platformSelector] / 3f + 1f, platformWidths[platformSelector] / 3f - 1f);
 
-                Vector3 laserPosition = new Vector3(laserXPosition, 1.5f, 0f);
+                Vector3 laserPosition = new Vector3(laserXPosition, 1f, 0f);
 
                 newLaser.transform.position = transform.position + laserPosition;
                 newLaser.transform.rotation = transform.rotation;

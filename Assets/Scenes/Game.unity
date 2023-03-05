@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7351610f4f98ab8499f78409ebcc7162, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae724cd4659bc4240a9618410a7b0d1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1362,6 +1362,52 @@ Transform:
   m_Father: {fileID: 1014622801}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &894120723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894120725}
+  - component: {fileID: 894120724}
+  m_Layer: 0
+  m_Name: LaserPool 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &894120724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894120723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a15816ed9ac4f48adaabb65ad77b50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 7338069358948457219, guid: 81a2d4232a8887d46a66496f5a4b8f0a, type: 3}
+  pooledAmount: 5
+--- !u!4 &894120725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894120723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.398058, y: 1.3653609, z: -8.465898}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942954438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,7 +1436,7 @@ RectTransform:
   m_GameObject: {fileID: 942954438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3376, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1204804329}
@@ -1477,7 +1523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae724cd4659bc4240a9618410a7b0d1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 682678982861bd64abe338bb5fe822e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1865,15 +1911,15 @@ MonoBehaviour:
   generationPoint: {fileID: 1394809601}
   distanceBetween: 3
   distanceBetweenMin: 1
-  distanceBetweenMax: 10
+  distanceBetweenMax: 5
   theObjectPools:
   - {fileID: 824307244}
   - {fileID: 212322857}
   - {fileID: 1240700374}
   - {fileID: 717352070}
   maxHeightPoint: {fileID: 1395585906}
-  maxHeightChange: 10
-  randomLaserThreshold: 25
+  maxHeightChange: 5
+  randomLaserThreshold: 70
   laserPool: {fileID: 167978489}
 --- !u!4 &1089888509
 Transform:
@@ -2589,7 +2635,7 @@ RectTransform:
   m_GameObject: {fileID: 1383969036}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1580955028}
@@ -2676,7 +2722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae724cd4659bc4240a9618410a7b0d1f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 682678982861bd64abe338bb5fe822e9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2749,7 +2795,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395585905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3077,8 +3123,8 @@ MonoBehaviour:
     m_Bits: 256
   groundCheck: {fileID: 109292968}
   groundCheckRadius: -7
-  dashTime: 3
-  dashSpeed: 30
+  dashTime: 1
+  dashSpeed: 20
   theGamemanager: {fileID: 643794639}
 --- !u!50 &1601138941
 Rigidbody2D:
@@ -3114,7 +3160,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1197238, y: -0.14366877}
+  m_Offset: {x: -0.054698706, y: -0.13219357}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3125,7 +3171,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2873363, y: 1.5267851}
+  m_Size: {x: 0.4381857, y: 1.5038347}
   m_EdgeRadius: 0
 --- !u!212 &1601138943
 SpriteRenderer:
@@ -3246,7 +3292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1747275173
 Transform:
   m_ObjectHideFlags: 0
