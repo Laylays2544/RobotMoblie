@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7338069358948457217}
   - component: {fileID: 7338069358948457218}
   m_Layer: 0
-  m_Name: LaserTrapS 2
+  m_Name: LaserTrapL
   m_TagString: killbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
