@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 7338069358948457219, guid: 383f4d86fc9a969438b5270cb11527ec, type: 3}
-  pooledAmount: 5
+  pooledAmount: 1
 --- !u!4 &167978490
 Transform:
   m_ObjectHideFlags: 0
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 7338069358948457219, guid: 81a2d4232a8887d46a66496f5a4b8f0a, type: 3}
-  pooledAmount: 5
+  pooledAmount: 1
 --- !u!4 &894120725
 Transform:
   m_ObjectHideFlags: 0
@@ -1438,7 +1438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 7338069358948457219, guid: 0643a6b638ede80429fc71e9cf592a2d, type: 3}
-  pooledAmount: 5
+  pooledAmount: 1
 --- !u!4 &929865700
 Transform:
   m_ObjectHideFlags: 0
