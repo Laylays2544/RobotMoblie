@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7338069358948457217}
   - component: {fileID: 7338069358948457218}
   m_Layer: 0
-  m_Name: LaserTrapS 2
+  m_Name: LaserTrapM
   m_TagString: killbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 80c7361c96a960e4887b808569dbb160, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dad877cb1777cde49aa506099a4211e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,24 +93,24 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7338069358948457219}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.026641846, y: -0.19433945}
+  m_Offset: {x: -0.01943016, y: -0.19433951}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.67, y: 4}
+    oldSize: {x: 1.34, y: 4}
     newSize: {x: 6.67, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.7185745, y: 3.4589171}
+  m_Size: {x: 0.39585876, y: 3.4589171}
   m_EdgeRadius: 0
 --- !u!114 &7338069358948457218
 MonoBehaviour:

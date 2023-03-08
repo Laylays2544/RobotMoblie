@@ -27,6 +27,8 @@ public class PlatformGenerator : MonoBehaviour
 
     public float randomLaserThreshold;
     public ObjectPooler laserPool;
+    public ObjectPooler laserPool2;
+    public ObjectPooler laserPool3;
 
     // Start is called before the first frame update
     void Start()
@@ -88,6 +90,32 @@ public class PlatformGenerator : MonoBehaviour
                 newLaser.transform.position = transform.position + laserPosition;
                 newLaser.transform.rotation = transform.rotation;
                 newLaser.SetActive(true);
+            }
+
+            if (Random.Range(0f, 100f) < randomLaserThreshold)
+            {
+                GameObject newLaser2 = laserPool2.GetPooledObject();
+
+                float trapXPosition = Random.Range(-platformWidths[platformSelector] / 3f + 1f, platformWidths[platformSelector] / 3f - 1f);
+
+                Vector3 trapPosition = new Vector3(trapXPosition, 1f, 0f);
+
+                newLaser2.transform.position = transform.position + trapPosition;
+                newLaser2.transform.rotation = transform.rotation;
+                newLaser2.SetActive(true);
+            }
+
+            if (Random.Range(0f, 100f) < randomLaserThreshold)
+            {
+                GameObject newLaser2 = laserPool3.GetPooledObject();
+
+                float trapXPosition = Random.Range(-platformWidths[platformSelector] / 3f + 1f, platformWidths[platformSelector] / 3f - 1f);
+
+                Vector3 trapPosition = new Vector3(trapXPosition, 1f, 0f);
+
+                newLaser2.transform.position = transform.position + trapPosition;
+                newLaser2.transform.rotation = transform.rotation;
+                newLaser2.SetActive(true);
             }
 
             transform.position = new Vector3(transform.position.x + (platformWidths[platformSelector] / 2), transform.position.y, transform.position.z);
