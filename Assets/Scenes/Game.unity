@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a11aaa5397967449a029ef8e3a1c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundSpeed: 1
+  backgroundSpeed: 0.3
   backgroundRenderer: {fileID: 239190015}
 --- !u!23 &239190015
 MeshRenderer:
@@ -1957,14 +1957,14 @@ MonoBehaviour:
   generationPoint: {fileID: 1394809601}
   distanceBetween: 3
   distanceBetweenMin: 1
-  distanceBetweenMax: 5
+  distanceBetweenMax: 4
   theObjectPools:
   - {fileID: 824307244}
   - {fileID: 212322857}
   - {fileID: 1240700374}
   - {fileID: 717352070}
   maxHeightPoint: {fileID: 1395585906}
-  maxHeightChange: 5
+  maxHeightChange: 4
   randomLaserThreshold: 70
   laserPool: {fileID: 167978489}
   laserPool2: {fileID: 929865699}
@@ -2155,7 +2155,7 @@ GameObject:
   - component: {fileID: 1191295569}
   - component: {fileID: 1191295568}
   m_Layer: 5
-  m_Name: JumpButton
+  m_Name: DashButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2227,7 +2227,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1601138940}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Jump
+        m_MethodName: Dash
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3163,7 +3163,7 @@ MonoBehaviour:
   moveSpeed: 10
   speedMultiplier: 1.25
   speedIncreaseMilestone: 50
-  jumpForce: 15
+  jumpForce: 16
   jumpTime: 0.25
   grounded: 0
   whatIsGround:
@@ -3396,7 +3396,7 @@ GameObject:
   - component: {fileID: 1843260964}
   - component: {fileID: 1843260963}
   m_Layer: 5
-  m_Name: DashButton
+  m_Name: JumpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3468,7 +3468,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1601138940}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: Dash
+        m_MethodName: Jump
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
