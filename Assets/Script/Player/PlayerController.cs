@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour
 
     public GameManager theGamemanager;
 
+    public AudioSource jumpSound;
+    public AudioSource deathSound;
+    public AudioSource dashSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
             stoppedJumping = false;
+            jumpSound.Play();
         }
         if (!grounded && canDoubleJump)
         {
@@ -68,6 +73,7 @@ public class PlayerController : MonoBehaviour
             jumpTimeCounter = jumpTime;
             stoppedJumping = false;
             canDoubleJump = false;
+            jumpSound.Play();
         }
         if (!stoppedJumping)
         {
@@ -94,6 +100,7 @@ public class PlayerController : MonoBehaviour
         if (dashTimeLeft <= 0)
         {
             dashTimeLeft = dashTime;
+            dashSound.Play();
         }
     }
 
@@ -133,12 +140,13 @@ public class PlayerController : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D other)
     {
         //RestartGame System
-        if(other.gameObject.tag == "killbox")
+        if (other.gameObject.tag == "killbox")
         {
             theGamemanager.RestartGame();
             moveSpeed = moveSpeedStore;
             speedMilestoneCount = speedMilestoneCountStore;
             speedIncreaseMilestone = speedIncreaseMilestoneStore;
+            deathSound.Play();
         }
 
         //Dash System

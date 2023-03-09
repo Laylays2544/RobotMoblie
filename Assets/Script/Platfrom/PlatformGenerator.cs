@@ -92,20 +92,20 @@ public class PlatformGenerator : MonoBehaviour
                 newLaser.SetActive(true);
             }
 
-            if (Random.Range(0f, 100f) < randomLaserThreshold)
+            if (Random.Range(0f, 150f) < randomLaserThreshold)
             {
                 GameObject newLaser2 = laserPool2.GetPooledObject();
 
                 float trapXPosition = Random.Range(-platformWidths[platformSelector] / 3f + 1f, platformWidths[platformSelector] / 3f - 1f);
 
-                Vector3 trapPosition = new Vector3(trapXPosition, 1f, 0f);
+                Vector3 trapPosition = new Vector3(trapXPosition, 1.5f, 0f);
 
                 newLaser2.transform.position = transform.position + trapPosition;
                 newLaser2.transform.rotation = transform.rotation;
                 newLaser2.SetActive(true);
             }
 
-            if (Random.Range(0f, 100f) < randomLaserThreshold)
+            if (Random.Range(0f, 200f) < randomLaserThreshold)
             {
                 GameObject newLaser2 = laserPool3.GetPooledObject();
 
