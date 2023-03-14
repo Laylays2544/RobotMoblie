@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 1431008495176617204, guid: 98041927452a1e043b4f98427199b42b, type: 3}
-  pooledAmount: 2
+  pooledAmount: 1
 --- !u!1 &239190012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 8898877318026660030, guid: c9396bc1d76042c4f9a84bd8e8cfe2f4, type: 3}
-  pooledAmount: 2
+  pooledAmount: 1
 --- !u!1 &861287787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,7 +2085,7 @@ MonoBehaviour:
   generationPoint: {fileID: 1394809601}
   distanceBetween: 3
   distanceBetweenMin: 1
-  distanceBetweenMax: 4
+  distanceBetweenMax: 3
   theObjectPools:
   - {fileID: 824307244}
   - {fileID: 212322857}
@@ -2093,7 +2093,7 @@ MonoBehaviour:
   - {fileID: 717352070}
   maxHeightPoint: {fileID: 1395585906}
   maxHeightChange: 4
-  randomLaserThreshold: 70
+  randomLaserThreshold: 80
   laserPool: {fileID: 167978489}
   laserPool2: {fileID: 929865699}
   laserPool3: {fileID: 894120724}

@@ -92,7 +92,7 @@ public class PlatformGenerator : MonoBehaviour
                 newLaser.SetActive(true);
             }
 
-            if (Random.Range(0f, 150f) < randomLaserThreshold)
+            if (Random.Range(0f, 200f) < randomLaserThreshold)
             {
                 GameObject newLaser2 = laserPool2.GetPooledObject();
 
@@ -105,7 +105,7 @@ public class PlatformGenerator : MonoBehaviour
                 newLaser2.SetActive(true);
             }
 
-            if (Random.Range(0f, 200f) < randomLaserThreshold)
+            if (Random.Range(0f, 300f) < randomLaserThreshold)
             {
                 GameObject newLaser2 = laserPool3.GetPooledObject();
 
